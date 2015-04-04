@@ -8,6 +8,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * Card
  *
+ * @Gedmo\Uploadable(filenameGenerator="SHA1")
  * @ORM\Table
  * @ORM\Entity(repositoryClass="Jack\DeckKeeperBundle\Entity\CardRepository")
  */
@@ -50,6 +51,7 @@ class Card
     /**
      * @var string
      *
+     * @Gedmo\UploadableFileName
      * @ORM\Column(name="image", nullable=true, type="string", length=255)
      */
     private $image;
@@ -116,6 +118,10 @@ class Card
      * @ORM\Column(name="number", nullable=true, type="integer")
      */
     private $number;
+
+    private $imageFile;
+
+    /**
 
     public function __toString()
     {
@@ -214,6 +220,16 @@ class Card
         $this->image = $image;
 
         return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
     /**
@@ -422,5 +438,22 @@ class Card
     public function getNumber()
     {
         return $this->number;
+    }
+
+    public function getImageWebPath()
+    {
+        return '/uploads/' . $this->getImage();
+    }
+
+    public function setImageFile($imageFile)
+    {
+        $this->imageFile = $imageFile;
+
+        return $this;
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
     }
 }
