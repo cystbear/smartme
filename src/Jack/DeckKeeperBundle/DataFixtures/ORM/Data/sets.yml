@@ -1,0 +1,4 @@
+Jack\DeckKeeperBundle\Entity\CardSet:
+    set1:
+        name: "Khans of Tarkir"
+        year: 2014

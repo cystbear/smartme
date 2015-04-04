@@ -1,0 +1,44 @@
+Jack\DeckKeeperBundle\Entity\Card:
+    card1:
+        cardSet: @set1
+        name: "Abzan Battle Priest"
+        manaCost: "3W"
+        type: "Creature"
+        subType: "Human Cleric"
+        description: >
+            Outlast {W} ({W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.)
+            Each creature you control with a +1/+1 counter on it has lifelink.
+        artisticdescription: "Wherever I walk, the ancestors walk too."
+        rarity: "Uncommon"
+        power: 3
+        toughness: 2
+        artist: "Chris Rahn"
+        number: 1
+
+    card2:
+        cardSet: @set1
+        name: "Abzan Falconer"
+        manaCost: "2W"
+        type: "Creature"
+        subType: "Human Soldier"
+        description: >
+            Outlast {W} ({W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.)
+            Each creature you control with a +1/+1 counter on it has flying.
+        artisticdescription: "The fastest way across the dunes is above."
+        rarity: "Uncommon"
+        power: 2
+        toughness: 3
+        artist: "Steven Belledin"
+        number: 2
+
+    card3:
+        cardSet: @set1
+        name: "Erase"
+        manaCost: "W"
+        type: "Instant"
+        subType: "Human Soldier"
+        description: "Exile target enchantment."
+        artisticdescription: "Truth is hard enough to see, let alone understand. We must remove all distractions to find clarity."
+        rarity: "Common"
+        artist: "Zack Stella"
+        number: 9
