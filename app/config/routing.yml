@@ -5,6 +5,10 @@ _locale_redirect:
          path: /en
          permanent: true
 
+_api:
+    resource: "@JackDeckKeeperBundle/Resources/config/routing/api.yml"
+    prefix: /api
+
 _deckkeeper:
     resource: "@JackDeckKeeperBundle/Resources/config/routing/frontend.yml"
     prefix:   /{_locale}
