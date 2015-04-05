@@ -5,9 +5,27 @@ namespace Jack\DeckKeeperBundle\Controller;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\Controller\Annotations\View as RestView;
+use FOS\RestBundle\Controller\Annotations\NoRoute;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Component\Validator\ConstraintViolationListInterface;
+use Jack\DeckKeeperBundle\Entity\Card;
 
 class ApiController extends FOSRestController
 {
+    /**
+     * @NoRoute
+     * @RestView
+     * @ParamConverter("card", class="Jack\DeckKeeperBundle\Entity\Card", converter="fos_rest.request_body")
+     */
+    public function newCardAction(Card $card, ConstraintViolationListInterface $validationErrors)
+    {
+        if ($validationErrors->count() > 0 ) {
+            // handle errors
+        }
+
+        return View::create($card);
+    }
+
     /**
      * @RestView
      */

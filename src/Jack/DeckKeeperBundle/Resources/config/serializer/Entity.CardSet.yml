@@ -1,0 +1,5 @@
+Jack\DeckKeeperBundle\Entity\CardSet:
+    exclusion_policy: NONE
+    properties:
+        cards:
+            exclude: true

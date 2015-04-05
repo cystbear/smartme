@@ -4,6 +4,7 @@ namespace Jack\DeckKeeperBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Card
@@ -25,7 +26,7 @@ class Card
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;

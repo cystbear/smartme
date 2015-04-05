@@ -9,6 +9,10 @@ _api:
     resource: "@JackDeckKeeperBundle/Resources/config/routing/api.yml"
     prefix: /api
 
+_api_noroute:
+    resource: "@JackDeckKeeperBundle/Resources/config/routing/noroute.yml"
+    prefix: /api
+
 _deckkeeper:
     resource: "@JackDeckKeeperBundle/Resources/config/routing/frontend.yml"
     prefix:   /{_locale}

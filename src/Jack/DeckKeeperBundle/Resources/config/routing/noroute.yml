@@ -1,0 +1,3 @@
+_new_card:
+    pattern:    /new-card
+    defaults:   { _controller: JackDeckKeeperBundle:Api:newCard }
