@@ -14,6 +14,7 @@ Jack\DeckKeeperBundle\Entity\Card:
         toughness: 2
         artist: "Chris Rahn"
         number: 1
+        image: <imageUrl(210, 300)>
 
     card2:
         cardSet: @set1
@@ -30,6 +31,7 @@ Jack\DeckKeeperBundle\Entity\Card:
         toughness: 3
         artist: "Steven Belledin"
         number: 2
+        image: <imageUrl(210, 300)>
 
     card3:
         cardSet: @set1
@@ -42,3 +44,4 @@ Jack\DeckKeeperBundle\Entity\Card:
         rarity: "Common"
         artist: "Zack Stella"
         number: 9
+        image: <imageUrl(210, 300)>

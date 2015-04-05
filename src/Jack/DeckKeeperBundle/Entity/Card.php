@@ -442,7 +442,7 @@ class Card
 
     public function getImageWebPath()
     {
-        return '/uploads/' . $this->getImage();
+        return 'http' === substr($this->getImage(), 0, 4) ? $this->getImage() : '/uploads/' . $this->getImage();
     }
 
     public function setImageFile($imageFile)
