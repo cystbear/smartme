@@ -7,8 +7,13 @@
     <!--
     <parameters>
     </parameters>
-
-    <services>
-    </services>
     -->
+    <services>
+
+        <service id="jack.cards_count_listener" class="Jack\DeckKeeperBundle\CardsCountListener">
+            <tag name="kernel.event_listener" event="add_card_event" method="onCardCreated" />
+        </service>
+
+    </services>
+
 </container>

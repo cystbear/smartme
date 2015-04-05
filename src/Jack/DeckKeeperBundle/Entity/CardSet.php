@@ -47,6 +47,17 @@ class CardSet
      */
     private $cards;
 
+    /**
+     *
+     * @ORM\Column(name="cards_count", type="integer")
+     */
+    private $cardsCount;
+
+    public function __construct()
+    {
+        $this->cardsCount = 0;
+    }
+
     public function __toString()
     {
         return $this->getName();
@@ -118,4 +129,26 @@ class CardSet
         return $this->cards;
     }
 
+    /**
+     * @param mixed $cardsCount
+     */
+    public function setCardsCount($cardsCount)
+    {
+        $this->cardsCount = $cardsCount;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCardsCount()
+    {
+        return $this->cardsCount;
+    }
+
+    public function incrementCardsCount()
+    {
+        $this->cardsCount++;
+    }
 }

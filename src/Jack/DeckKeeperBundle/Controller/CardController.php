@@ -9,6 +9,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Jack\DeckKeeperBundle\Entity\Card;
 use Jack\DeckKeeperBundle\Form\CardType;
 
+use Jack\DeckKeeperBundle\AddCardEvent;
+
 class CardController extends Controller
 {
     public function indexAction()
@@ -49,6 +51,12 @@ class CardController extends Controller
                 $uploadableManager->markEntityToUpload($card, $imageFile);
             }
 
+            $em->flush();
+
+            $eventDispatcher = $this->get('event_dispatcher');
+            $addCardEvent = new AddCardEvent($card, $card->getCardSet());
+
+            $eventDispatcher->dispatch(AddCardEvent::ADD_CARD_EVENT, $addCardEvent);
             $em->flush();
 
             return $this->redirect($this->generateUrl('frontend_deck_keeper_index'));
